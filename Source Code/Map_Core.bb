@@ -4108,12 +4108,6 @@ Function UpdateSecurityCams%()
 				PositionEntity(sc\CameraOBJ, EntityX(sc\BaseOBJ, True), EntityY(sc\BaseOBJ, True) - 0.083, EntityZ(sc\BaseOBJ, True))
 				RotateEntity(sc\CameraOBJ, EntityPitch(sc\CameraOBJ), sc\room\Angle + sc\Angle + Clamp(sc\CurrAngle, -sc\Turn, sc\Turn), 0.0)
 				
-				If sc\Cam <> 0
-					PositionEntity(sc\Cam, EntityX(sc\CameraOBJ, True), EntityY(sc\CameraOBJ, True), EntityZ(sc\CameraOBJ, True))
-					RotateEntity(sc\Cam, EntityPitch(sc\CameraOBJ), EntityYaw(sc\CameraOBJ), 0.0)
-					MoveEntity(sc\Cam, 0.0, 0.0, 0.1)
-				EndIf
-				
 				If sc <> sc_I\CoffinCam
 					If Abs(DeltaYaw(sc\CameraOBJ, Camera)) < 60.0 And EntityVisible(sc\CameraOBJ, Camera) Then MTFCameraCheckDetected = (MTFCameraCheckTimer > 0.0)
 				EndIf
@@ -4139,7 +4133,6 @@ Function UpdateSecurityCams%()
 					sc\InSight = (EntityInView(sc\MonitorOBJ, Camera) And EntityVisible(Camera, sc\ScrOBJ))
 					
 					If (me\BlinkTimer > -6.0 Lor me\BlinkTimer < -11.0) And sc\InSight
-						ParticleCam = sc\Cam
 						
 						Local Temp% = False
 						Local RID% = sc\room\RoomTemplate\RoomID
@@ -4150,17 +4143,6 @@ Function UpdateSecurityCams%()
 						Else
 							CameraFogColor(sc\Cam, CurrFogColorR, CurrFogColorG, CurrFogColorB)
 							CameraClsColor(sc\Cam, CurrFogColorR, CurrFogColorG, CurrFogColorB)
-						EndIf
-						
-						If sc\State < sc\RenderInterval
-							sc\State = sc\State + fps\Factor[0]
-						Else
-							If sc_I\CoffinCam = Null Lor Rand(5) = 5 Lor sc\CoffinEffect <> 3
-								UpdateLights(sc\Cam)
-							Else
-								UpdateLights(sc_I\CoffinCam\Cam)
-							EndIf
-							sc\State = 0.0
 						EndIf
 						
 						If sc\CoffinEffect = 1 Lor sc\CoffinEffect = 3

@@ -7571,9 +7571,6 @@ Function UpdateMenu%()
 								opt\SecurityCamRenderIntervalLevel = 0.0
 								;[End Block]
 						End Select
-						For sc.SecurityCams = Each SecurityCams
-							If sc\Screen Then sc\RenderInterval = opt\SecurityCamRenderIntervalLevel
-						Next
 						;[End Block]
 					Case MenuTab_Options_Audio
 						;[Block]
