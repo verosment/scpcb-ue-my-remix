@@ -13,7 +13,7 @@ NOTE: RTX Remix requires an RTX enabled graphics card. I think you can run it on
 ---
 
 # RTX Mods
-Currently, I am working on getting lighting to act nicer. This involves using emissive materials and manually placing lights in each room if needed.
+Currently, I am working on getting lighting to look nicer and more stable. This involves using emissive materials and manually placing lights in each room if needed.
 
 ---
 # SCP - Containment Breach Ultimate Edition Reborn
