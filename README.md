@@ -10,6 +10,12 @@ NOTE: RTX Remix requires an RTX enabled graphics card. I think you can run it on
 7. Change your Options.ini for SCB-UE Reborn to [this one](https://pastebin.com/raw/XphEjweV), open the Options.ini and replace the contents or replace the file itself. This is in `AppData\Roaming\scpcb-ue\Data`
 8. All set. RTX Remix should be rendering now. If you want a starting place, then edit the file named `rtx.conf` and replace the contents with [this one](https://pastebin.com/raw/nr50q9tS)
 
+---
+
+# RTX Mods
+Currently, I am working on getting lighting to act nicer. This involves using emissive materials and manually placing lights in each room if needed.
+
+---
 # SCP - Containment Breach Ultimate Edition Reborn
 
 The game is based on the works of the SCP Foundation community (http://www.scp-wiki.net/).
